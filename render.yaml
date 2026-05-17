@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: gestion-conges
+    env: php
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: composer install --no-interaction --prefer-dist && npm install && npm run build
+    startCommand: php artisan serve --host 0.0.0.0 --port $PORT
